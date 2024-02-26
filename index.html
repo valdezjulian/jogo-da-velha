@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- JavaScript -->
+    <script defer src="./assets/js/game.js"></script>
+    <script defer src="./assets/js/main.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/img/icons8-tic-tac-toe-40.png">
+    <!-- Page title -->
+    <title>Jogo da Velha</title>
+</head>
+
+<body>
+    <div class="content">
+
+        <div>
+            <img id="volume" src="./assets/img/icons8-audio-50.png" alt="Sound Volume" width="32px" height="32px">
+            <audio muted id="music" src="./assets/songs/assets_songs_Ninja-Toad.ogg"></audio>
+        </div>
+
+        <header>
+            <h1 id="title">Jogo da Velha</h1>
+        </header>
+
+        <button id="play">PLAY
+            <audio id="sound-play" src="./assets/songs/play-sound-effect.ogg"></audio>
+        </button>
+
+        <div class="menu-modal">
+            <span id="close">X</span>
+            <div id="option-pve">Jogar contra um BOT - PvE
+                <audio id="hover-pve" src="./assets/songs/select-mode.ogg"></audio>
+            </div>
+            <div id="option-pvp">Jogar contra um amigo - PvP
+                <audio id="hover-pvp" src="./assets/songs/select-mode.ogg"></audio></div>
+        </div>
+    </div>
+</body>
+
+</html>

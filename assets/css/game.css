@@ -1,0 +1,222 @@
+/* reset button */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green);
+    width: 100vw;
+    height: 100vh;
+    min-width: 400px;
+}
+
+#reset {
+    position: absolute;
+    right: 5rem;
+    bottom: 5rem;
+}
+
+#back {
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+
+/* Board game */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+}
+
+.cell {
+    position: relative;
+    display: flex;
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border: .9rem solid var(--dark-green);
+    font: 400 var(--symbol-size) 'Roboto', sans-serif;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell:nth-child(-n + 9) {
+    border-top: none;
+    border-left: none;
+}
+
+.cell:nth-child(n + 7) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3n +3) {
+    border-right: none;
+}
+
+.cell.x::after,
+.cell.x::before,
+.cell.o::before,
+.cell.o::after {
+    background-color: var(--white);
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    background-color: var(--hover);
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after,
+.cell.x::after,
+.cell.x::before {
+    position: absolute;
+    content: "";
+    width: calc(var(--symbol-size) * 0.2);
+    height: var(--symbol-size);
+}
+
+.board.x .cell:not(.x):not(.o):hover::before,
+.cell.x::after {
+    transform: rotate(45deg);
+}
+
+.board.x .cell:not(.x):not(.o):hover::after,
+.cell.x::before {
+    transform: rotate(-45deg);
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after,
+.cell.o::after,
+.cell.o::before {
+    position: absolute;
+    content: "";
+    width: var(--symbol-size);
+    height: var(--symbol-size);
+    border-radius: 50%;
+}
+
+.board.o .cell:not(.x):not(.o):hover::before,
+.cell.o::before {
+    width: calc(var(--symbol-size) * 0.9);
+    height: calc(var(--symbol-size) * 0.9);
+}
+
+.board.o .cell:not(.x):not(.o):hover::after,
+.cell.o::after {
+    width: calc(var(--symbol-size) * 0.5);
+    height: calc(var(--symbol-size) * 0.5);
+    background-color: var(--green);
+}
+
+.cell.x,
+.cell.o {
+    cursor: not-allowed;
+}
+
+
+/* Score board */
+
+section {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    font: 700 2rem 'Roboto', sans;
+    ;
+}
+
+section>div {
+    margin-top: 5rem;
+    border: .5rem solid var(--dark-green);
+}
+
+.player__name {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-bottom: .5rem solid var(--dark-green);
+    background: var(--white);
+    color: var(--dark-green);
+}
+
+.player__name>div:last-child {
+    border-left: .5rem solid var(--dark-green);
+}
+
+.player__name>div {
+    width: 100%;
+    text-align: center;
+    padding: .4rem 0 .4rem 0;
+}
+
+.player__score {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var(--white);
+}
+
+.player__score>span:last-child {
+    border-left: .5rem solid var(--dark-green);
+}
+
+.player__score>span {
+    width: 100%;
+    text-align: center;
+    padding: .8rem 0 .8rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-top: 5rem;
+    }
+    #reset {
+        position: absolute;
+        right: .5rem;
+        top: 3rem;
+    }
+    #reset img {
+        width: 3.5rem;
+    }
+    #back {
+        position: absolute;
+        left: 3.2rem;
+        top: 2.5rem;
+    }
+    #back img {
+        width: 4.6rem;
+    }
+    .cell {
+        cursor: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .board.o .cell:not(.x):not(.o):hover::before,
+    .board.x .cell:not(.x):not(.o):hover::before,
+    .board.x .cell:not(.x):not(.o):hover::after {
+        background-color: transparent;
+    }
+}
