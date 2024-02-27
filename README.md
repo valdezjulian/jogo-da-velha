@@ -15,7 +15,8 @@
     • Jogabilidade: Permite jogar contra um oponente humano ou contra um bot.
     <br>
     • Padrão MVC: Utiliza o padrão Model-View-Controller para separar a lógica de negócio da interface do usuário. 
-    O arquivo interface.js atua como controlador, intermediando a interação entre a lógica do jogo e a interface gráfica.</p>
+    O arquivo interface.js atua como controlador, intermediando a interação entre a lógica do jogo e a interface gráfica.<br>
+    • Áudio: Adicionou-se uma função de áudio para proporcionar uma experiência sonora imersiva durante o jogo.</p>
 <br>
 <h3>Tecnologias Utilizadas:</h3>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> 
@@ -25,7 +26,7 @@
 <h4>Como Jogar</h4>
   <p>Para iniciar uma partida de Jogo da Velha, siga estas instruções simples:
   <br>
-  <b>1.</b> Abra o arquivo index.html em um navegador web compatível.
+  <b>1.</b> Click e acesse o link do projeto, ele irá abrir no seu navegador web compatível.
   <br>
   <b>2.</b> Escolha se deseja jogar contra um amigo ou contra o bot.
   <br>
